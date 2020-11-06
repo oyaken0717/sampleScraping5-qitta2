@@ -6,11 +6,8 @@
 </head>
 <body>
 
-	<div
-		th:each="i : ${ #numbers.sequence(0, documents.select('.nameSet .companyName .company').size()-1 ) }" 
-		th:value="${i}" 
-		th:text="${documents.select('.nameSet .companyName .company').get(i).text()}">
-		会社名
+  	<div th:each="job:${jobList}">
+		<div th:text="${job.companyName}">会社名</div>
 	</div>
 	
 	<p th:text="${#dates.format(#dates.createNow(), 'yyyy年MM月dd日 HH:mm:ss')}"></p>
